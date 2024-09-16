@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table class="table table-hover" >
+        <thead>
+            <th id="symbol" width="15%">Symbol</th>
+            <th id="name" width="25%">Name</th>
+            <th id="shares" width:"10%">Shares</th>
+            <th id="price" width="15%">Price</th>
+            <th id="total" width="20%">TOTAL</th>
+        </thead>
+        <tbody>
+            {% for Holding in Holdings %}
+            <tr>
+                <td headers="symbol">{{ Holding["symbol"] }}</td>
+                <td headers="name">{{ Holding["name"] }}</td>
+                <td headers="shares">{{ Holding["shares"] }}</td>
+                <td headers="price">{{ Holding["price"] }}</td>
+                <td headers="total">{{ Holding["total"] }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td>CASH</td>
+                <td colspan=3></td>
+                <td headers="total" align=>{{ Cash }}<a href="/addcash"><button class="btn btn-secondary btn-sm " type="button">+</button></a></td>
+            </tr>
+            <tr>
+                <td colspan=4></td>
+                <td><strong>{{ CashTotal }}</strong></td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

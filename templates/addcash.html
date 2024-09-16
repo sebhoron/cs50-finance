@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    AddCash
+{% endblock %}
+
+{% block main %}
+    <form action="/addcash" method="post">
+        <div class="form-group">
+            <div class="input-group w-25 mx-auto">
+                <span class="input-group-text">$</span>
+                <input type="text" name="amount" class="form-control" placeholder="Amount" aria-label="Amount (to the nearest dollar)">
+                <span class="input-group-text">.00</span>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Add Cash</button>
+    </form>
+{% endblock %}
